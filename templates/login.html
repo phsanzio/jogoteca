@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
+<style>
+  #btn_entrar{color:#F2E6D8; background-color:#735032;border:none}
+  #btn_entrar:hover{color:#78A633; background-color:#024959; border-radius:10px; transition: 0.5s}
+</style>
+
 <form action="{{ url_for('login') }}" method="post">
   <div class="mb-3">
     <label for="email" class="form-label">Email</label>
@@ -10,7 +15,7 @@
     <label for="senha" class="form-label">Senha</label>
     <input id="senha" name="senha" type="password" class="form-control">
   </div>
-  <button type="submit" class="btn btn-primary">Entrar</button>
+  <button type="submit" class="btn btn-primary" id='btn_entrar'>Entrar</button>
 </form>
 
 {% endblock %}

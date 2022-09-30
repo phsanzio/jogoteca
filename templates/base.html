@@ -21,12 +21,10 @@
   <header class="p-3 text-light" style="background-color: #D9AC84;">
     <div class="float-end text-end mr-1 text-light">
       {% if 'usuario_nome' in session %}
-      <form action="{{ url_for('logout') }}" method="post">
+      <form action="{{ url_for('logout') }}" method="post" style='margin-top: 20px'>
         <div>Olá, {{ session['usuario_nome'] }}!</div>
-        <button class="btn btn-link">Sair</button>
+        <button class="btn btn-link" ><img src='static/log-out.png'></button>
       </form>
-      {% else %}
-      <div><a href="{{ url_for('login') }}">Login</a></div>
       {% endif %}
     </div>
     <h1 class="display-1" style="color: white;">Jogoteca</h1>
@@ -34,10 +32,13 @@
     <ul class="nav">
     
         <a href="/" class="nav-link">Início</a>
+        <a href="#" class="nav-link">Sobre & Contato</a>
         {% if 'usuario_nome' in session %}
         <a href="/novo" class="nav-link">Cadastrar</a>
+        {% else %}
+        <a href="{{ url_for('login') }}" class="nav-link">Login</a>
         {% endif %}
-        <a href="#" class="nav-link">Sobre & Contato</a>
+        
     
       
     </ul>

@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% block conteudo %}
+
+<style>
+  #btn_save{color:#F2E6D8; background-color:#735032;border:none}
+  #btn_save:hover{color:#78A633; background-color:#024959; border-radius:10px; transition: 0.5s}
+</style>
+
   <form action="/criar" method="POST">
     <fieldset>
       <div class="form-group">
@@ -14,7 +20,8 @@
         <label for="console">Console</label>
         <input type="text" id="console" name="console" class="form-control">
       </div>
-      <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+      <br>
+      <button type="submit" class="btn btn-primary btn-salvar" id='btn_save'>Salvar</button>
     </fieldset>
   </form>
 {% endblock %}
